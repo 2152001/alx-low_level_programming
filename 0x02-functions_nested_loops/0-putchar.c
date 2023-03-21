@@ -1,6 +1,3 @@
-0-putchar.c CODE
-
-
 #include "main.h"
 	/**
 	 * main - print _putchar
@@ -22,5 +19,3 @@
 	_putchar('\n');
 	return (0);
 	}
-
-
