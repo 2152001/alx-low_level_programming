@@ -1,15 +1,14 @@
-#ifndef FUNCTION_POINTERS_H
-	#define FUNCTION_POINTERS_H
+#ifndef FUN_PTR
+#define FUN_PTR
+#include <stdio.h>
+#include <stdlib.h>
+
+int _putchar(char c);
+
+void print_name(char *name, void (*f)(char *));
 
 
-	#include <stddef.h>
-	#include <stdlib.h>
+void array_iterator(int *array, size_t size, void (*action)(int));
 
-
-	void print_name(char *name, void (*f)(char *));
-	int _putchar(char c);
-	void array_iterator(int *array, size_t size, void (*action)(int));
-	int int_index(int *array, int size, int (*cmp)(int));
-
-
-	#endif
+int int_index(int *array, int size, int (*cmp)(int));
+#endif

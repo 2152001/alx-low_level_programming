@@ -2,25 +2,33 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
+
 /**
- * print_numbers - a function that prints numbers
- * @separator: separator numbers
+ * print_strings - prints all strings with a separator
+ * @separator: separe strings
  * @n: int, number of undefined arguments
  */
 
-void print_numbers(const char *separator, const unsigned int n, ...)
+void print_strings(const char *separator, const unsigned int n, ...)
 {
 va_list l;
 unsigned int i;
-
+char *c;
 va_start(l, n);
 
 for (i = 0; i < n; i++)
 {
-printf("%i", va_arg(l, int));
+c = va_arg(l, char*);
+if (c != NULL)
+printf("%s", c);
+
+else
+printf("(nil)");
+
 if (i != n - 1 && separator != NULL)
 printf("%s", separator);
 }
+
 va_end(l);
 
 putchar('\n');
